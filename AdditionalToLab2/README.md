@@ -1,73 +1,70 @@
-# React + TypeScript + Vite
+# Smart Laptop Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Smart Laptop Finder is an AI-powered React application that helps users find their ideal laptop. By adjusting interactive filter sliders for Target Price, Desired RAM, Optimal Weight, and CPU Frequency, the custom AI engine calculates a similarity score across a dynamic dataset of laptops to present the absolute best matches. 
 
-Currently, two official plugins are available:
+The application uses Euclidean distance algorithms to sort and rank available laptops based on how well they fulfill your ideal specifications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Screenshots
 
-## React Compiler
+<img width="1174" height="1070" alt="image" src="https://github.com/user-attachments/assets/d2f69c5f-ad52-453f-bbbe-229ff4a1e018" />
+*Caption: Overview of the Smart Laptop Finder interface with top matches active.*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<img width="282" height="546" alt="image" src="https://github.com/user-attachments/assets/66699de5-2afb-4de2-b31a-88323c4145c8" />
+*Caption: Adjustable filter sliders for personalized laptop matching.*
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Interactive Filtering Sliders**: Easily set your ideal laptop specifications, including Price (₹), RAM (GB), Weight (kg), and CPU Frequency (GHz).
+- **AI Matching Engine**: Uses normalized Euclidean distance math to calculate an optimal similarity score.
+- **Dynamic Results**: The top matches list instantly updates as you refine your preferences on the sliders, rendering the top 50 laptops to avoid performance bottlenecks.
+- **Modern and Responsive UI**: Built with Tailwind CSS and Lucide React icons for a beautiful, sleek, and mobile-friendly design.
+- **Client-Side CSV Data Parsing**: Extracts raw dataset directly in the browser via `PapaParse`.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Frontend**: React 19, TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS 4
+- **Icons**: Lucide React 
+- **Data Parsing**: PapaParse
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Getting Started
+
+### Prerequisites
+
+You need [Node.js](https://nodejs.org/) installed to run this project.
+
+### Installation
+
+1. Clone the repository (if you haven't already):
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate into the project directory:
+   ```bash
+   cd testLab2Filter
+   ```
+
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the Vite development server:
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will be available at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Data Source
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The application automatically expects a `laptops.csv` file inside the `public` directory upon loading. Ensure the file contains valid columns at least for `Price`, `Ram`, `Weight`, and `Cpu`.
+
+
+## 📄 License
+
+This project is open-sourced and available under the terms of the [MIT License](LICENSE).
