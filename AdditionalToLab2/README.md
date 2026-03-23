@@ -9,6 +9,8 @@ The application uses Euclidean distance algorithms to sort and rank available la
 <img width="1174" height="1070" alt="image" src="https://github.com/user-attachments/assets/d2f69c5f-ad52-453f-bbbe-229ff4a1e018" />
 *Caption: Overview of the Smart Laptop Finder interface with top matches active.*
 
+##
+
 <img width="282" height="546" alt="image" src="https://github.com/user-attachments/assets/66699de5-2afb-4de2-b31a-88323c4145c8" />
 *Caption: Adjustable filter sliders for personalized laptop matching.*
 
